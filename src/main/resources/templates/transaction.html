@@ -1,0 +1,88 @@
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<title>Register - Transaction</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" type="text/css" href="/styles/master.css">
+	<link rel="stylesheet" type="text/css" href="/styles/transaction.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="/scripts/master.js" defer></script>
+	<script type="text/javascript" src="/scripts/transaction.js" defer></script>
+</head>
+
+<body>
+	<div class="header">
+		<h1 class="primary-message">Transaction</h1>
+	</div>
+
+	<div id="main" class="main">
+		<div id="error" th:class="${#strings.isEmpty(errorMessage)} ? hidden : ''">
+			<h4 id="errorMessage" class="error-message" th:text="${errorMessage}"></h4>
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="searchWrapper">
+            <input type="text" name="" id="" placeholder="Search products by lookup code">
+            <button><i class="fa fa-search"></i></button>
+		</div>
+		
+		<!-- Products list after search -->
+		
+        <!-- Transaction Summary Here -->
+		<div class="summaryWrapper">
+			<p>Summary</p>
+			<div class="productDesc">
+				<ul class="prodDesc">
+					<li>
+						<span class="produDisplay">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product&nbsp;</span>
+						<span class="countDisplay">&nbsp;&nbsp;&nbsp;Quantity</span>
+						<span class="priceDisplay">Price</span>
+					</li>
+				</ul>
+			</div>
+			<div class="productsWrapper">
+				<ul id="productsListing" class="products">
+					<li>
+						<input type="hidden" name="productId"/>
+						<span class="productLookupCodeDisplay">Lookup Sample1&nbsp;&nbsp;</span>
+						<span class="productCountDisplay">&nbsp;10 &nbsp;&nbsp;</span>
+						<span class="productPriceDisplay">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.50 </span>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+        <!-- Buttons -->
+        <div class="buttonWrapper">
+            <button id="cancelItemsButton" type="button" class="action">Cancel</button>
+            <button id="checkoutButton" type="button" class="action">Checkout</button>
+        </div>
+    
+	</div>
+
+		<div class="hidden">
+			<input type="checkbox" id="isRefreshed" class="hidden">
+			<script type="text/javascript">
+				window.onunload = function() {
+					const isRefreshedElement = document.getElementById("isRefreshed");
+
+					if(!isRefreshedElement.checked) {
+						isRefreshedElement.checked = true;
+					} else {
+						isRefreshedElement.checked = false;
+						location.reload();
+					}
+				}
+			</script>
+		</div>
+	</div>
+
+	<div class="footer">
+		<img id="signOutImage" src="/images/Sign-Out.png" alt="Sign Out" class="footer" />
+	</div>
+		
+</body>
+
+</html>

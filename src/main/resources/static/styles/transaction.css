@@ -1,0 +1,137 @@
+.searchWrapper input[type=text] {
+    width: 320px;
+    padding: 6px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    font-size: 17px;
+  }
+
+.searchWrapper button {
+    cursor: pointer;
+    height: 34px;
+    width: 45px;
+    margin-right: 7px;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 5px;
+}
+.searchWrapper button:hover {
+    background-color: rgba(231, 231, 231, 0.274);
+}
+.summaryWrapper {
+    margin: auto;
+    width: 850px;
+    border: 2px solid;
+    border-radius: 6px;
+    margin-top: 30px;
+
+}
+
+.summaryWrapper p {
+    font-size: 27px;
+    text-decoration: underline;
+}
+
+
+.prodDesc li {
+	margin: .5em;
+    padding: 1.1em 3em;
+	height: .2em;
+	border-radius: 4px;
+    text-align: left;
+    font-size: 1.4em;
+    list-style: none;
+    font-weight: bold;
+}
+
+    .produDislay {
+        padding-left: 2em;
+    }
+    .countDisplay {
+        padding-left: 5em;
+    }
+    .priceDisplay {
+        padding-left: 5em;
+    }
+
+.productsWrapper {
+    width: 100%;
+}
+
+
+.products, .productDesc {
+	margin: auto;
+	list-style-type: none;
+	padding: 0;
+	width: 100%;
+}
+
+.products li {
+	cursor: pointer;
+	background-color: white;
+	margin: .5em;
+    padding: 1.1em 3em;
+	height: 1em;
+	border-radius: 4px;
+    text-align: left;
+    font-size: 1.4em;
+}
+
+.products li:hover {
+	color: #607D8B;
+	background-color: #DDD;
+	left: .1em;
+}
+
+.productLookupCodeDisplay {
+    padding-left: 2.7em;
+}
+.productCountDisplay {
+    padding-left: 4em;
+}
+.productPriceDisplay {
+    padding-left: 4em;
+}
+
+a.button {
+	text-decoration: none;
+}
+
+.buttonWrapper {
+    margin-top: 15px;
+}
+
+
+/* media query */
+@media screen and (max-width: 900px) {
+    .summaryWrapper {
+        width: 450px;
+    }
+    
+    .summaryWrapper p {
+        font-size: 20px;
+    }
+
+    .prodDesc li {
+        font-size: .8em;
+    }
+    
+        .produDislay {
+            padding-left: 1em;
+        }
+        .countDisplay {
+            padding-left: 3.5em;
+        }
+        .priceDisplay {
+            padding-left: 5em;
+        }
+    
+    .products li {
+        margin: .5em;
+        padding: 1.1em 3em;
+        font-size: .8em;
+    }
+    
+} 
