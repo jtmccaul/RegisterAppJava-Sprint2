@@ -1,3 +1,8 @@
+/*
+	<Sprint4>
+	Edited by Toma Tomonari.
+	Added price variable and set and get functions.
+*/
 package edu.uark.registerapp.models.api;
 
 import java.time.LocalDateTime;
@@ -15,6 +20,17 @@ public class Product extends ApiResponse {
 	}
 	public Product setId(final UUID id) {
 		this.id = id;
+		return this;
+	}
+
+	private long price;
+
+	public long getPrice() {
+		return this.price;
+	}
+
+	public long setPrice(final long price) {
+		this.price = price;
 		return this;
 	}
 
@@ -63,6 +79,7 @@ public class Product extends ApiResponse {
 
 		this.count = -1;
 		this.id = new UUID(0, 0);
+		this.price = 0L;
 		this.lookupCode = StringUtils.EMPTY;
 
 		this.setCreatedOn(LocalDateTime.now());
@@ -72,6 +89,7 @@ public class Product extends ApiResponse {
 		super(false);
 
 		this.id = productEntity.getId();
+		this.price = productEntity.getPrice();
 		this.count = productEntity.getCount();
 		this.lookupCode = productEntity.getLookupCode();
 
