@@ -6,15 +6,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 
 	<link rel="stylesheet" type="text/css" href="/styles/master.css">
+	<link rel="stylesheet" type="text/css" href="/styles/transaction.css">
+
 
 	<script type="text/javascript" src="/scripts/master.js" defer></script>
-	<script type="text/javascript" src="/scripts/signIn.js" defer></script>
+	<script type="text/javascript" src="/scripts/transaction.js" defer></script>
 </head>
 
 <body>
 
 	<div class="header">
-		<h1 class="primary-message">Transaacion</h1>
+		<h1 class="primary-message">Transaction</h1>
 	</div>
 		
 	<div id="main" class="main">
@@ -22,10 +24,33 @@
 			<h4 id="errorMessage" class="error-message" th:text="${errorMessage}"></h4>
 		</div>
 
-		<form action="/" method="POST" onsubmit="return validateForm();" class="inputContent">
-			<!-- TODO: Form input elements -->
-		</form>
-	</div>
+		<div class = "search">
+			<input type = "text" name = "search" id = "search" placeholder = "Search products">
+			<button type = "button" name = "searchButton" id = "searchButton">Search</button>
+		</div>
+		
+		<div class = "summary">
+			<p>Summary</p>
+			<div class = "productDescription">
+			    <ul class = "productDesc">
+                     <li>
+                        <span class = "productDis">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product&nbsp;</span>
+                        <span class = "countDis">&nbsp;&nbsp;&nbsp;Quantity</span>
+                        <span class = "priceDis">Price</span>
+                     </li>
+                </ul>
+            </div>
+            <div class = "productShowing">
+                <ul id = "productsListing" class = "products">
+                    <li>
+                        <span class = "productCodeDis">{productCodeDis}&nbsp;&nbsp;</span>
+                        <span class = "productCountDis">&nbsp;{productCountDis}&nbsp;&nbsp;</span>
+                        <span class = "productPriceDis">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{productPriceDis}</span>
+                    </li>  
+                </ul>
+            </div>
+        </div>
+
 		
 </body>
 
